@@ -25,7 +25,7 @@ users = [
 class Users(Resource):
     def get(self, name):
         for user in users:
-            if(name == user["name"]):
+            if(name.casefold() == user["name"].casefold()):
                 return user, 200
         return "User not found", 404
 
